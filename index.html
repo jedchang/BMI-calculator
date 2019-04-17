@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>BMI calculator</title>
+    <link rel="icon" href="./images/favicon/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="icon" href="./images/favicon/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="./images/favicon/favicon-48.png" sizes="48x48" type="image/png" />
+    <link rel="icon" href="./images/favicon/favicon-62.png" sizes="62x62" type="image/png" />
+    <link rel="icon" href="./images/favicon/favicon-192.png" sizes="192x192" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/all.css" />
+  </head>
+
+  <body>
+    <div class="main">
+      <div class="control-panel">
+        <div class="logo">
+          <img src="./images/BMILogo_bg.png" alt="" />
+          <div class="mask">
+            <div class="pic"></div>
+          </div>
+          <p>Body．Mass．Index</p>
+        </div>
+        <div class="inner">
+          <div class="input-info">
+            <div class="i-tall i-content">
+              <img src="./images/icon-height.svg" class="icon" />
+              <input type="text" id="tall" class="input-tall" placeholder="請輸入身高" />
+              <span class="unit">cm</span>
+              <div class="tall-error txt-error"></div>
+            </div>
+            <div class="i-weight i-content">
+              <img src="./images/icon-weight.svg" class="icon" />
+              <input type="text" id="weight" class="input-weight" placeholder="請輸入體重" />
+              <span class="unit">kg</span>
+              <div class="weight-error txt-error"></div>
+            </div>
+          </div>
+          <button class="result-btn">
+            <p>看結果</p>
+          </button>
+          <div class="reset-btn">
+            <div class="r-txt">
+              <p class="status"></p>
+              <p class="bmi"></p>
+              <span>BMI</span>
+              <a href="javascript:;" class="icon reset">
+                <i class="fas fa-retweet"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="record-panel">
+        <h1>BMI 紀錄</h1>
+        <ul class="record-list"></ul>
+      </div>
+      <div class="record-panel-s"></div>
+    </div>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
