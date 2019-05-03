@@ -524,8 +524,8 @@ input:focus {
 
 .record-panel {
   height: 450px;
-  min-height: calc(100vh - (350px + 90px));
-  padding: 28px 30px 50px 35px;
+  min-height: 450px;
+  padding: 28px 30px 40px 35px;
   margin-top: 50px;
   position: relative;
   background-color: #e7e4df;
@@ -539,7 +539,7 @@ input:focus {
   font-size: 24px;
   font-weight: 600;
   color: #424242;
-  margin: 0 auto 18px auto;
+  margin: 0 auto 15px auto;
 }
 
 .record-panel .record-list {
