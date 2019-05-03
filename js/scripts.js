@@ -4,6 +4,9 @@ let resetIcon = document.querySelector('.reset');
 let resultList = document.querySelector('.record-list');
 let tallTxt = document.querySelector('.input-tall');
 let weightTxt = document.querySelector('.input-weight');
+let bmiTxt = document.querySelector('.bmi');
+let pTxt = document.querySelector('.status');
+let spanTxt = document.querySelector('.r-txt span');
 let data = JSON.parse(localStorage.getItem('bmiData')) || [];
 
 /*----------  監聽與更新  ----------*/
@@ -17,18 +20,13 @@ function resultData(e) {
   let tallVal = tallTxt.value;
   let weightVal = weightTxt.value;
   let statusTxt = document.querySelector('.r-status');
-  let bmiTxt = document.querySelector('.bmi');
-  let pTxt = document.querySelector('.status');
-  let spanTxt = document.querySelector('.r-txt span');
   let iconBg = document.querySelector('.icon');
   let statusColor = '';
 
   let bmiVal = weightVal / ((tallVal / 100) * (tallVal / 100));
   let bmiCount = bmiVal.toFixed(2);
 
-  if (18.5 <= bmiCount && bmiCount <= 25) {
-    statusTxt = '理想';
-    pTxt.textContent = '理想';
+  function healthy() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('healthy');
     bmiTxt.classList.add('healthy');
@@ -36,9 +34,9 @@ function resultData(e) {
     resetBtn.classList.add('healthy');
     iconBg.classList.add('healthy');
     statusColor = 'healthy';
-  } else if (18.5 >= bmiCount) {
-    statusTxt = '過輕';
-    pTxt.textContent = '過輕';
+  }
+
+  function underweight() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('underweight');
     bmiTxt.classList.add('underweight');
@@ -46,9 +44,9 @@ function resultData(e) {
     resetBtn.classList.add('underweight');
     iconBg.classList.add('underweight');
     statusColor = 'underweight';
-  } else if (25 <= bmiCount && bmiCount <= 30) {
-    statusTxt = '過重';
-    pTxt.textContent = '過重';
+  }
+
+  function overweight() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('overweight');
     bmiTxt.classList.add('overweight');
@@ -56,9 +54,9 @@ function resultData(e) {
     resetBtn.classList.add('overweight');
     iconBg.classList.add('overweight');
     statusColor = 'overweight';
-  } else if (30 <= bmiCount && bmiCount <= 35) {
-    statusTxt = '輕度肥胖';
-    pTxt.textContent = '輕度肥胖';
+  }
+
+  function obese1() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('obese-1');
     bmiTxt.classList.add('obese-1');
@@ -66,9 +64,9 @@ function resultData(e) {
     resetBtn.classList.add('obese-1');
     iconBg.classList.add('obese-1');
     statusColor = 'obese-1';
-  } else if (35 <= bmiCount && bmiCount <= 40) {
-    statusTxt = '中度肥胖';
-    pTxt.textContent = '中度肥胖';
+  }
+
+  function obese2() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('obese-2');
     bmiTxt.classList.add('obese-2');
@@ -76,9 +74,9 @@ function resultData(e) {
     resetBtn.classList.add('obese-2');
     iconBg.classList.add('obese-2');
     statusColor = 'obese-2';
-  } else if (40 <= bmiCount) {
-    statusTxt = '重度肥胖';
-    pTxt.textContent = '重度肥胖';
+  }
+
+  function obese3() {
     bmiTxt.textContent = bmiCount;
     pTxt.classList.add('obese-3');
     bmiTxt.classList.add('obese-3');
@@ -86,6 +84,32 @@ function resultData(e) {
     resetBtn.classList.add('obese-3');
     iconBg.classList.add('obese-3');
     statusColor = 'obese-3';
+  }
+
+  if (18.5 <= bmiCount && bmiCount <= 25) {
+    statusTxt = '理想';
+    pTxt.textContent = '理想';
+    healthy();
+  } else if (18.5 >= bmiCount) {
+    statusTxt = '過輕';
+    pTxt.textContent = '過輕';
+    underweight();
+  } else if (25 <= bmiCount && bmiCount <= 30) {
+    statusTxt = '過重';
+    pTxt.textContent = '過重';
+    overweight();
+  } else if (30 <= bmiCount && bmiCount <= 35) {
+    statusTxt = '輕度肥胖';
+    pTxt.textContent = '輕度肥胖';
+    obese1();
+  } else if (35 <= bmiCount && bmiCount <= 40) {
+    statusTxt = '中度肥胖';
+    pTxt.textContent = '中度肥胖';
+    obese2();
+  } else if (40 <= bmiCount) {
+    statusTxt = '重度肥胖';
+    pTxt.textContent = '重度肥胖';
+    obese3();
   }
 
   let totalResult = {
@@ -129,7 +153,7 @@ function updateList(items) {
   let date = new Date();
   let yyyy = date.getFullYear();
   let mm = date.getMonth() + 1 >= 10 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1);
-  let dd = date.getDate();
+  let dd = date.getDate() <= 10 ? '0' + date.getDate() : date.getMonth();
   let today = mm + '-' + dd + '-' + yyyy;
 
   let strLi = '';
@@ -150,7 +174,7 @@ function updateList(items) {
 }
 
 /*----------  更新按鈕  ----------*/
-function changeBtn(items) {
+function changeBtn() {
   resultBtn.style.display = 'none';
   resetBtn.style.display = 'block';
 }
@@ -161,6 +185,10 @@ function resetData() {
   resetBtn.style.display = 'none';
   tallTxt.value = '';
   weightTxt.value = '';
+  pTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
+  bmiTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
+  spanTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
+  resetBtn.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
 }
 
 /*----------  刪除內容  ----------*/
