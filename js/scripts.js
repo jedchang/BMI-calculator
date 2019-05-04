@@ -26,90 +26,40 @@ function resultData(e) {
   let bmiVal = weightVal / ((tallVal / 100) * (tallVal / 100));
   let bmiCount = bmiVal.toFixed(2);
 
-  function healthy() {
+  function allType(status) {
     bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('healthy');
-    bmiTxt.classList.add('healthy');
-    spanTxt.classList.add('healthy');
-    resetBtn.classList.add('healthy');
-    iconBg.classList.add('healthy');
-    statusColor = 'healthy';
-  }
-
-  function underweight() {
-    bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('underweight');
-    bmiTxt.classList.add('underweight');
-    spanTxt.classList.add('underweight');
-    resetBtn.classList.add('underweight');
-    iconBg.classList.add('underweight');
-    statusColor = 'underweight';
-  }
-
-  function overweight() {
-    bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('overweight');
-    bmiTxt.classList.add('overweight');
-    spanTxt.classList.add('overweight');
-    resetBtn.classList.add('overweight');
-    iconBg.classList.add('overweight');
-    statusColor = 'overweight';
-  }
-
-  function obese1() {
-    bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('obese-1');
-    bmiTxt.classList.add('obese-1');
-    spanTxt.classList.add('obese-1');
-    resetBtn.classList.add('obese-1');
-    iconBg.classList.add('obese-1');
-    statusColor = 'obese-1';
-  }
-
-  function obese2() {
-    bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('obese-2');
-    bmiTxt.classList.add('obese-2');
-    spanTxt.classList.add('obese-2');
-    resetBtn.classList.add('obese-2');
-    iconBg.classList.add('obese-2');
-    statusColor = 'obese-2';
-  }
-
-  function obese3() {
-    bmiTxt.textContent = bmiCount;
-    pTxt.classList.add('obese-3');
-    bmiTxt.classList.add('obese-3');
-    spanTxt.classList.add('obese-3');
-    resetBtn.classList.add('obese-3');
-    iconBg.classList.add('obese-3');
-    statusColor = 'obese-3';
+    pTxt.classList.add(status);
+    bmiTxt.classList.add(status);
+    spanTxt.classList.add(status);
+    resetBtn.classList.add(status);
+    iconBg.classList.add(status);
+    statusColor = status;
   }
 
   if (18.5 <= bmiCount && bmiCount <= 25) {
     statusTxt = '理想';
     pTxt.textContent = '理想';
-    healthy();
+    allType('healthy');
   } else if (18.5 >= bmiCount) {
     statusTxt = '過輕';
     pTxt.textContent = '過輕';
-    underweight();
+    allType('underweight');
   } else if (25 <= bmiCount && bmiCount <= 30) {
     statusTxt = '過重';
     pTxt.textContent = '過重';
-    overweight();
+    allType('overweight');
   } else if (30 <= bmiCount && bmiCount <= 35) {
     statusTxt = '輕度肥胖';
     pTxt.textContent = '輕度肥胖';
-    obese1();
+    allType('obese-1');
   } else if (35 <= bmiCount && bmiCount <= 40) {
     statusTxt = '中度肥胖';
     pTxt.textContent = '中度肥胖';
-    obese2();
+    allType('obese-2');
   } else if (40 <= bmiCount) {
     statusTxt = '重度肥胖';
     pTxt.textContent = '重度肥胖';
-    obese3();
+    allType('obese-3');
   }
 
   let totalResult = {
@@ -185,10 +135,13 @@ function resetData() {
   resetBtn.style.display = 'none';
   tallTxt.value = '';
   weightTxt.value = '';
-  pTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
-  bmiTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
-  spanTxt.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
-  resetBtn.classList.remove('healthy', 'underweight', 'overweight', 'obese-1', 'obese-2', 'obese-3');
+  pTxt.removeAttribute('class');
+  pTxt.classList.add('status');
+  bmiTxt.removeAttribute('class');
+  bmiTxt.classList.add('bmi');
+  spanTxt.removeAttribute('class');
+  resetBtn.removeAttribute('class');
+  resetBtn.classList.add('reset-btn');
 }
 
 /*----------  刪除內容  ----------*/
