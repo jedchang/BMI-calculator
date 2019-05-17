@@ -173,8 +173,8 @@ input:focus {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 50px;
-  -webkit-box-shadow: inset 0 -10px 10px 0 #2c3033, inset 10px 0 10px 0 #393e42, inset -10px 0 10px 0 #4a4f52, inset 0 -20px 20px 0 #171e23, 0 2px 10px 0px #272a27;
-          box-shadow: inset 0 -10px 10px 0 #2c3033, inset 10px 0 10px 0 #393e42, inset -10px 0 10px 0 #4a4f52, inset 0 -20px 20px 0 #171e23, 0 2px 10px 0px #272a27;
+  -webkit-box-shadow: inset 0 -10px 10px 0 #2c3033, inset 10px 0 10px 0 #393e42, inset -10px 0 10px 0 #4a4f52, inset 0 -20px 20px 0 #171e23, 0 2px 10px 0px #272a27;
+          box-shadow: inset 0 -10px 10px 0 #2c3033, inset 10px 0 10px 0 #393e42, inset -10px 0 10px 0 #4a4f52, inset 0 -20px 20px 0 #171e23, 0 2px 10px 0px #272a27;
 }
 
 .control-panel .inner:after {
@@ -453,7 +453,7 @@ input:focus {
 }
 
 .control-panel .reset-btn .r-txt span.overweight {
-  color: #91c10c;
+  color: #ff982d;
 }
 
 .control-panel .reset-btn .r-txt span.obese-1 {
@@ -501,7 +501,7 @@ input:focus {
 }
 
 .control-panel .reset-btn .icon.overweight {
-  background-color: #91c10c;
+  background-color: #ff982d;
 }
 
 .control-panel .reset-btn .icon.obese-1 {
@@ -524,13 +524,13 @@ input:focus {
 
 .record-panel {
   height: 450px;
-  min-height: calc(100vh - (350px + 90px));
-  padding: 28px 30px 50px 35px;
+  min-height: 450px;
+  padding: 28px 30px 40px 35px;
   margin-top: 50px;
   position: relative;
   background-color: #e7e4df;
-  -webkit-box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
-          box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
+  -webkit-box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
+          box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -539,7 +539,7 @@ input:focus {
   font-size: 24px;
   font-weight: 600;
   color: #424242;
-  margin: 0 auto 18px auto;
+  margin: 0 auto 15px auto;
 }
 
 .record-panel .record-list {
@@ -585,7 +585,7 @@ input:focus {
 }
 
 .record-panel .item.overweight {
-  border-left: 7px solid #91c10c;
+  border-left: 7px solid #ff982d;
 }
 
 .record-panel .item.obese-1 {
@@ -645,10 +645,10 @@ input:focus {
 }
 
 .record-panel .r-circle.overweight {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#c9e870), to(#91c10c));
-  background-image: -webkit-linear-gradient(bottom, #c9e870, #91c10c);
-  background-image: -o-linear-gradient(bottom, #c9e870, #91c10c);
-  background-image: linear-gradient(to top, #c9e870, #91c10c);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#ff982d), to(#d17615));
+  background-image: -webkit-linear-gradient(bottom, #ff982d, #d17615);
+  background-image: -o-linear-gradient(bottom, #ff982d, #d17615);
+  background-image: linear-gradient(to top, #ff982d, #d17615);
 }
 
 .record-panel .r-circle.obese-1 {
@@ -719,7 +719,7 @@ input:focus {
 }
 
 .record-panel .r-status.overweight {
-  color: #91c10c;
+  color: #ff982d;
 }
 
 .record-panel .r-status.obese-1 {
@@ -782,8 +782,8 @@ input:focus {
   top: 50px;
   left: -302px;
   background-color: #e7e4df;
-  -webkit-box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
-  box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
+  -webkit-box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
+  box-shadow: inset 0 -10px 10px 0 #ddd, inset 10px 0 10px 0 #ddd, inset -10px 0 10px 0 #ddd, inset 0 -20px 20px 0 #a09f9b, 0 16px 10px 0px #272a27;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
