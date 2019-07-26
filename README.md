@@ -2,8 +2,7 @@
 
 BMI 計算器
 
-![image](https://img.shields.io/badge/JavaScript-exercise-brightgreen.svg)
-![image](https://img.shields.io/badge/SASS-exercise-ff69b4.svg)
+![image](https://img.shields.io/badge/JavaScript-exercise-F0DB4F.svg) ![image](https://img.shields.io/badge/SASS-exercise-CD6799.svg)
 
 ![images](https://github.com/jedchang/BMI-Calculator/blob/master/preview.jpg)
 
